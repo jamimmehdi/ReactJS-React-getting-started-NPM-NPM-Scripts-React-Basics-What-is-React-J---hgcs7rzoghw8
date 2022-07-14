@@ -16,7 +16,10 @@ const App = () => {
   const startTimer = (e) => {
     if (e.key === 'Enter') {
       const VALID_INPUT = validateInput(e.target.value);
-      if (VALID_INPUT === 0) return;
+      if (VALID_INPUT === 0) {
+        setTimerValue(0);
+        return;
+      };
       setTimerValue(VALID_INPUT);
       if (intervalId) {
         clearInterval(intervalId);
